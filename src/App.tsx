@@ -1,4 +1,4 @@
-import { ConditionalComponent } from './components/ConditionalComponent'
+import { FatherComponent } from './components/FatherComponent'
 
 import './App.css'
 
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
 
-      <ConditionalComponent />
+      <FatherComponent fatherText='Father Text Example' />
     </div>
   )
 }
