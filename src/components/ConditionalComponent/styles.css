@@ -1,0 +1,11 @@
+.conditional-component-box {
+    margin: 40px 0;
+}
+
+.conditional-component button {
+    margin: 20px 0;
+}
+
+.conditional-component small {
+    display: block;
+}

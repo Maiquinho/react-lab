@@ -1,4 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
+
+import "./styles.css";
+
 
 export function ConditionalComponent(){
     const [show, setShow] = useState(false);
@@ -11,8 +14,10 @@ export function ConditionalComponent(){
 
 
     return (
-        <div>
-            <div className="conditional-component">{ show ? componentText : 'Lorem ipsum dolor sit amet consectetur adipisicing elit...' }</div>
+        <div className="conditional-component">
+            <div className="conditional-component-box">
+                { show ? componentText : 'Lorem ipsum dolor sit amet consectetur adipisicing elit...' }
+            </div>
 
             <button onClick={handleTextComponent}>Show Component</button>
 
