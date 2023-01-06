@@ -1,6 +1,6 @@
-import { FatherComponent } from './components/FatherComponent'
+import { CountComponent } from './components/CountComponent';
 
-import './App.css'
+import './App.css';
 
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
 
-      <FatherComponent fatherText='Father Text Example' />
+      <CountComponent />
     </div>
   )
 }
