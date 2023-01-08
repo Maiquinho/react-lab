@@ -1,0 +1,15 @@
+.movies .movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.movies .movies-grid .movie-grid-item {
+    width: 24%;
+}
+
+.movies .movies-grid .movie-grid-item img {
+    width: 100%;
+}
