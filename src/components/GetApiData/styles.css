@@ -1,3 +1,7 @@
+.movies button {
+    margin: 40px 0;
+}
+
 .movies .movies-grid {
     display: flex;
     flex-wrap: wrap;

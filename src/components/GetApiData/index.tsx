@@ -20,8 +20,6 @@ export function GetApiData() {
 
     return (
         <div className="movies">
-            <button onClick={handleGetMoviesData}>Get Movies</button>
-            <div>Total movies: {movies.length}</div>
             <div className="movies-grid">
                 {movies.map((movie, index) => (
                     <div key={index} className="movie-grid-item">
@@ -30,6 +28,9 @@ export function GetApiData() {
                     </div>
                 ))}
             </div>
+
+            <button onClick={handleGetMoviesData}>Get Movies</button>
+            <div>Total movies: {movies.length}</div>
         </div>
     )
 }
