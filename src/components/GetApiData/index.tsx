@@ -12,10 +12,11 @@ type Movie = {
 export function GetApiData() {
     const [movies, setMovies] = useState<Movie[]>([]);
 
-    function handleGetMoviesData() {
-        fetch('https://api.b7web.com.br/cinema/')
-            .then((response) => response.json())
-            .then((json) => setMovies(json));
+    async function handleGetMoviesData() {
+        const response = await fetch('https://api.b7web.com.br/cinema/');
+        const data = await response.json();
+        
+        setMovies(data);
     }
 
     return (
