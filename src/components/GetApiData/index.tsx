@@ -27,22 +27,22 @@ export function GetApiData() {
         <>
             {loading ? (
                 <Loading />
-            ) : 
-            (
-                <div className="movies">
-                    <div className="movies-grid">
-                        {movies.map((movie, index) => (
-                            <div key={index} className="movie-grid-item">
-                                <img src={movie.avatar} alt="movie avatar" />
-                                <p>{movie.titulo}</p>
-                            </div>
-                        ))}
-                    </div>
+            ) :
+                (
+                    <div className="movies">
+                        <div className="movies-grid">
+                            {movies.map((movie, index) => (
+                                <div key={index} className="movie-grid-item">
+                                    <img src={movie.avatar} alt="movie avatar" />
+                                    <p>{movie.titulo}</p>
+                                </div>
+                            ))}
+                        </div>
 
-                    <button onClick={handleGetMoviesData} disabled={movies.length != 0 ? true : false}>Get Movies</button>
-                    <div>Total movies: {movies.length}</div>
-                </div>
-            )
+                        <button onClick={handleGetMoviesData} disabled={movies.length != 0 ? true : false}>Get Movies</button>
+                        <div>Total movies: {movies.length}</div>
+                    </div>
+                )
             }
         </>
     )
