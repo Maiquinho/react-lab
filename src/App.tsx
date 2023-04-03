@@ -1,4 +1,4 @@
-import { GetApiData } from './components/GetApiData';
+import { UseEffect } from './components/UseEffect';
 
 import './App.css';
 
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
 
-      <GetApiData />
+      <UseEffect />
     </div>
   )
 }
