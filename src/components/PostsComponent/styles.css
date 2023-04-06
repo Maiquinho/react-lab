@@ -5,3 +5,11 @@
 .posts-article h2, p {
     color: #ffffffde;
 }
+
+.posts-article__title {
+    margin: 20px
+}
+
+.posts-article__title h2 {
+    margin: 0;
+}
