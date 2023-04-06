@@ -1,0 +1,15 @@
+.post-article {
+    padding: 16px;
+    background: #020202;
+
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.post-article h2, p {
+    color: #ffffffde;
+}
+
+.post-article h2 {
+    font-size: 18px;
+}

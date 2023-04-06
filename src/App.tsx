@@ -1,4 +1,4 @@
-import { UseEffect } from './components/UseEffect';
+import { PostsComponent } from './components/PostsComponent';
 
 import './App.css';
 
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
 
-      <UseEffect />
+      <PostsComponent />
     </div>
   )
 }
