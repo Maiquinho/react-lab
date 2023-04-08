@@ -6,17 +6,19 @@ import { Post } from '../../types/Post';
 
 
 export function PostsComponent() {
+    const POSTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
+
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState<Post[]>([]);
     const [fieldPost, setFieldPost] = useState({ title: '', body: '' });
 
     useEffect(() => {
         handlePosts();
-    })
+    }, [posts])
 
     async function handlePosts() {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const response = await fetch(POSTS_ENDPOINT);
             const json = await response.json();
 
             setLoading(false);
@@ -50,8 +52,37 @@ export function PostsComponent() {
         }
     }
 
-    function handleAddPost() {
-        alert(`Título: ${fieldPost.title} \n Corpo: ${fieldPost.body}`)
+    async function handleAddPost() {
+
+        if (fieldPost.title !== '' && fieldPost.body !== '') {
+
+            const response = await fetch(POSTS_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                body: JSON.stringify({
+                    userId: 1,
+                    title: fieldPost.body,
+                    body: fieldPost.body
+                })
+            });
+            const json = await response.json();
+            
+            if(json.id){
+                alert(`Post ${json.id} adicionado com sucesso`);
+
+                setPosts(prevPosts => {
+                    return [...prevPosts, json]
+                })
+
+            }else{
+                alert('Ocorreu algum erro, tente mais tarde!')
+            }
+
+        } else {
+            alert('Preencha os campos corretamente!');
+        }
     }
 
 
