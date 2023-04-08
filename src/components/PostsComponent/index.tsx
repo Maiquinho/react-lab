@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, InputHTMLAttributes, TextareaHTMLAttributes, useEffect, useState } from 'react';
 import { Loading } from '../Loading';
 import { PostComponent } from '../PostComponent';
 import './styles.css';
@@ -8,6 +8,7 @@ import { Post } from '../../types/Post';
 export function PostsComponent() {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState<Post[]>([]);
+    const [fieldPost, setFieldPost] = useState({ title: '', body: '' });
 
     useEffect(() => {
         handlePosts();
@@ -26,12 +27,50 @@ export function PostsComponent() {
         }
     }
 
+    function handleFieldPost(e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) {
+
+        switch (e.target.localName) {
+            case 'input':
+                setFieldPost(prevField => {
+                    return {
+                        ...prevField,
+                        title: e.target.value
+                    }
+                })
+                break;
+
+            case 'textarea':
+                setFieldPost(prevField => {
+                    return {
+                        ...prevField,
+                        body: e.target.value
+                    }
+                })
+                break;
+        }
+    }
+
+    function handleAddPost() {
+        alert(`Título: ${fieldPost.title} \n Corpo: ${fieldPost.body}`)
+    }
+
+
+
     return (
         <>
             {loading ? <Loading /> :
 
                 (
                     <>
+                        <fieldset>
+                            <legend>Adicionar novo post</legend>
+
+                            <input type="text" placeholder='Título do Post' onChange={handleFieldPost} value={fieldPost.title} />
+                            <textarea placeholder='Corpo do Post' onChange={handleFieldPost} value={fieldPost.body}></textarea>
+
+                            <button onClick={handleAddPost}>Adicionar</button>
+                        </fieldset>
+
                         {posts.length > 0 ? (
 
                             <article className="posts-article">
@@ -54,7 +93,7 @@ export function PostsComponent() {
                         )}
                     </>
                 )
-                
+
             }
         </>
     )
