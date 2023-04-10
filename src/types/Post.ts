@@ -4,3 +4,11 @@ export interface Post {
     title: string;
     body: string;
 }
+
+export interface Posts {
+    posts: Post[];
+}
+
+export interface addPostProps {
+    onAdd: (title: string, body: string) => void;
+}
