@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Loading } from '../Loading';
-import { POSTS_ENDPOINT } from '../../api/jsonplaceholder';
+import { fetchApi } from '../../api/jsonplaceholder';
 import { Post } from '../../types/Post';
 import { PostsRow } from '../PostsRow';
 import { AddPost } from '../AddPost';
@@ -21,9 +21,7 @@ export function PostsComponent() {
 
     async function handlePosts() {
         try {
-            const response = await fetch(POSTS_ENDPOINT);
-            const json = await response.json();
-
+            const json = await fetchApi.getData('posts');
             setLoading(false);
             setPosts(json);
         } catch (error) {
@@ -34,22 +32,10 @@ export function PostsComponent() {
 
     async function handleAddPost(title: string, body: string) {
 
-        const response = await fetch(POSTS_ENDPOINT, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8"
-            },
-            body: JSON.stringify({
-                userId: 1,
-                title: title,
-                body: body
-            })
-        });
-        const json = await response.json();
+        const json = await fetchApi.postData('posts', 1, title, body);
 
         if (json.id) {
             alert(`Post ${json.id} adicionado com sucesso`);
-
         } else {
             alert('Ocorreu algum erro, tente mais tarde!')
         }
