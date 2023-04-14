@@ -13,11 +13,12 @@
 @media (min-width: 1024px) {
     .reducer-count-buttons {
         flex-direction: row;
-
-        margin-top: 8px;
+        justify-content: center;
+        gap: 8px;
     }
 
     .reducer-count-buttons button {
         margin-bottom: unset;
+        
     }
 }
