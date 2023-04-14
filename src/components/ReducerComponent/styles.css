@@ -1,0 +1,23 @@
+.reducer-count-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    margin-top: 24px;
+}
+
+.reducer-count-buttons button {
+    margin-bottom: 8px;
+}
+
+@media (min-width: 1024px) {
+    .reducer-count-buttons {
+        flex-direction: row;
+
+        margin-top: 8px;
+    }
+
+    .reducer-count-buttons button {
+        margin-bottom: unset;
+    }
+}
