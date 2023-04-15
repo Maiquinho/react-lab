@@ -1,51 +1,21 @@
-import { useReducer } from 'react';
-import { ReducerState, ReducerAction } from '../../types/Reducer';
+import { useCountReducer } from '../../hooks/reducers/countReducer';
 
 import './styles.css';
 
 
-
-const initialState = { count: 0 };
-
-function reducer(state: ReducerState, action: ReducerAction) {
-
-    switch (action.type) {
-        case "ADD":
-
-            return { ...state, count: state.count + 1 };
-            break;
-
-        case "DEL":
-
-            if (state.count > 0) {
-                return { ...state, count: state.count - 1 };
-            }
-            break;
-
-        case "RESET":
-
-            return initialState;
-            break;
-
-    }
-
-    return state;
-
-}
-
-
 export function ReducerComponent() {
 
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [countState, countDispatch] = useCountReducer();
+    
 
     return (
         <div>
-            Contagem: {state.count}
+            Contagem: {countState.count}
 
             <div className="reducer-count-buttons">
-                <button onClick={() => dispatch({ type: 'ADD' })}>Adicionar</button>
-                <button onClick={() => dispatch({ type: 'DEL' })}>Remover</button>
-                <button onClick={() => dispatch({ type: 'RESET' })}>Resetar</button>
+                <button onClick={() => countDispatch({ type: 'ADD' })}>Adicionar</button>
+                <button onClick={() => countDispatch({ type: 'DEL' })}>Remover</button>
+                <button onClick={() => countDispatch({ type: 'RESET' })}>Resetar</button>
             </div>
         </div>
     )
