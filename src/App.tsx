@@ -1,4 +1,4 @@
-import { ReducerComponent } from './components/ReducerComponent';
+import { EmployeeList } from './components/EmployeeList';
 
 import './App.css';
 
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
 
-      <ReducerComponent />
+      <EmployeeList />
     </div>
   )
 }
