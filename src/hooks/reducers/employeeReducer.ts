@@ -10,10 +10,13 @@ function reducer(state: Employees, action: ActionType){
     switch(action.type){
         case 'ADD':
             if(action.payload?.name){
-                state.push({
+                const newState = [...state];
+                newState.push({
                     id: uuidv4(),
                     name: action.payload?.name
                 });
+
+                return newState;
             }
         break;
 
