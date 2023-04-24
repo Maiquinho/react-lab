@@ -10,7 +10,7 @@ function reducer(state: Employees, action: ActionType){
     switch(action.type){
         case 'ADD':
             if(action.payload?.name){
-                const newState = [...state];
+                let newState = [...state];
                 newState.push({
                     id: uuidv4(),
                     name: action.payload?.name
@@ -22,12 +22,16 @@ function reducer(state: Employees, action: ActionType){
 
         case 'DEL':
             if(action.payload?.id){
-                state = state.filter(stateItem => stateItem.id !== action.payload?.id);
+                let newState = [...state];
+                newState = newState.filter(stateItem => stateItem.id !== action.payload?.id);
+                return newState;
             }
         break;
 
         case 'SORT':
-            state = state.sort((a, b) => (a.name > b.name) ? 1 : -1);
+            let newState = [...state];
+            newState = newState.sort((a, b) => (a.name > b.name) ? 1 : -1);
+            return newState;
         break;
 
     }
