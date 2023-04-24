@@ -1,5 +1,6 @@
 .add-employee-fieldset {
     border: none;
+    padding: 0;
 }
 
 .add-employee-fieldset legend {
@@ -23,4 +24,7 @@
 
 .add-employee-fieldset input, .add-employee-fieldset button {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

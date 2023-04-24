@@ -12,9 +12,11 @@ export function AddEmployee({ onAdd }: EmployeeSubmitForm) {
         setEmployeeField(e.target.value);
     }
 
-    function handleAddEmployee(){
-        onAdd(employeeField);
-        setEmployeeField('');
+    function handleAddEmployee() {
+        if(employeeField.length > 0){
+            onAdd(employeeField);
+            setEmployeeField('');
+        }
     }
 
 
