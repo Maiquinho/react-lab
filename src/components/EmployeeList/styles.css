@@ -1,3 +1,47 @@
 .employee-list h2 {
     margin: 28px 0;
 }
+
+.employee-section {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.employee-section .employee-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.employee-card {
+    background: #0e0e0e;
+
+    border-radius: 8px;
+
+    padding: 8px 20px;
+    margin-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.employee-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-card .employee-card__info h3 {
+    font-size: 16px;
+    margin: 0;
+}   
+
+.employee-card .employee-card__info small {
+    font-size: 12px;
+}
+
+.employee-card button {
+    padding: 8px 16px;
+}
