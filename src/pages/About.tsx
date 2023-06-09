@@ -8,10 +8,10 @@ export function About(){
 
             <ul>
                 <li>
-                    <Link to="/sobre/michael">Michael</Link>
+                    <Link to="/about/michael">Michael</Link>
                 </li>
                 <li>
-                    <Link to="/sobre/reactlab">React Lab</Link>
+                    <Link to="/about/reactlab">React Lab</Link>
                 </li>
             </ul>
         </div>
