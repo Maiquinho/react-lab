@@ -32,6 +32,12 @@ body {
   margin: 0;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
