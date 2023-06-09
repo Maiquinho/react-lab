@@ -11,3 +11,7 @@
   justify-content: space-between;
   gap: 12px;
 }
+
+.standard-padding {
+  padding: 24px;
+}
