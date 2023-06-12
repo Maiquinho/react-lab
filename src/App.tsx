@@ -8,13 +8,13 @@ import { Faq } from './pages/Faq';
 
 import { Routes, Route } from 'react-router-dom';
 
-import './App.css';
+import './styles/global.css';
 
 
 export default function App() {
 
   return (
-    <div className="App">
+    <div className="h-screen bg-gray-800">
       <Header />
 
       <Routes>
